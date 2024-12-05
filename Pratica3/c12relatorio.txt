@@ -1,0 +1,117 @@
+1. o codigo nao entra no if pois x nunca sera 0;
+
+2.Script started on 2023-09-10 23:19:38-03:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="120" LINES="30"]
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ gcc -g -o c12 c12.c
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ ./c12
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ gbd c12
+[?2004l
+Command 'gbd' not found, did you mean:
+  command 'gzbd' from deb zbd-utils (2.0.2-2)
+  command 'gbp' from deb git-buildpackage (0.9.25)
+  command 'sbd' from deb sbd (1.5.1-1ubuntu2)
+  command 'god' from deb ruby-god (0.13.7-3build3)
+  command 'gwd' from deb geneweb (6.08+git20181019+dfsg-3)
+  command 'gsd' from deb python3-gsd (2.5.1-1build1)
+  command 'zbd' from deb zbd-utils (2.0.2-2)
+  command 'bd' from deb bd (1.02-6)
+  command 'dbd' from deb netatalk (3.1.12~ds-9ubuntu0.22.04.1)
+  command 'gld' from deb postfix-gld (1.7-8build1)
+  command 'gid' from deb id-utils (4.6.28-20200521ss15dab)
+  command 'gdb' from deb gdb (12.1-0ubuntu1~22.04)
+  command 'rbd' from deb ceph-common (17.2.6-0ubuntu0.22.04.1)
+Try: sudo apt install <deb name>
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ gdb c12
+[?2004l
+[35;1mGNU gdb (Ubuntu 12.1-0ubuntu1~22.04) 12.1[m
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32mc12[m...
+[?2004h(gdb) break 5
+[?2004l
+Breakpoint 1 at [34m0x1155[m: file [32mc12.c[m, line 6.
+[?2004h(gdb) run
+[?2004l
+Starting program: [32m/home/matlinux/ufmg/ED/Pratica3/c12[m 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib/x86_64-linux-gnu/libthread_db.so.1[m".
+
+Breakpoint 1, [33mmain[m () at [32mc12.c[m:6
+6	    [01;34mif[m[31m([mx [31m==[m [35m0[m[31m)[m [31m{[m
+[?2004h[?2004l
+[?2004h(gdb) continue
+[?2004l
+Continuing.
+[Inferior 1 (process 28372) exited normally]
+[?2004h[?2004l
+[?2004h(gdb) exit
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ exit
+[?2004l
+exit
+
+Script done on 2023-09-10 23:20:26-03:00 [COMMAND_EXIT_CODE="0"]
+
+
+3. adicionei uma condiçao para x poder ser 0;
+
+4.Script started on 2023-09-10 23:22:45-03:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="120" LINES="30"]
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ exit./c12correto gcc -g -o c12correto c12correto.c
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ gcc -g -o c12correto c12correto.cexit[K./c12correto 
+[?2004l
+X is zero[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ gdb [9@./c12correto[Cgdb [K12c[K[K[K[K c12correto
+[?2004l
+[35;1mGNU gdb (Ubuntu 12.1-0ubuntu1~22.04) 12.1[m
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32mc12correto[m...
+[?2004h(gdb) break 4
+[?2004l
+Breakpoint 1 at [34m0x1155[m: file [32mc12correto.c[m, line 5.
+[?2004h(gdb) run
+[?2004l
+Starting program: [32m/home/matlinux/ufmg/ED/Pratica3/c12correto[m 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib/x86_64-linux-gnu/libthread_db.so.1[m".
+
+Breakpoint 1, [33mmain[m () at [32mc12correto.c[m:5
+5	    [32mint[m x[31m=[m[35m0[m[31m;[m
+[?2004h[?2004l
+[?2004h(gdb) continue
+[?2004l
+Continuing.
+X is zero[Inferior 1 (process 28682) exited normally]
+[?2004h[?2004l
+[?2004h(gdb) exit
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ exit
+[?2004l
+exit
+
+Script done on 2023-09-10 23:23:32-03:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,128 @@
+1.Muitos mallocs nao estao sendo liberados pois os frees do codigo nao estao em nenhum for e ;
+
+2.Script started on 2023-09-10 20:31:52-03:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="120" LINES="30"]
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ gcc -g -o c04 c04.c
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ ./c04
+[?2004l
+Segmentation fault
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ gdb c04
+[?2004l
+[35;1mGNU gdb (Ubuntu 12.1-0ubuntu1~22.04) 12.1[m
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32mc04[m...
+[?2004h(gdb) break 12
+[?2004l
+Breakpoint 1 at [34m0x1176[m: file [32mc04.c[m, line 13.
+[?2004h(gdb) run
+[?2004l
+Starting program: [32m/home/matlinux/ufmg/ED/Pratica3/c04[m 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib/x86_64-linux-gnu/libthread_db.so.1[m".
+
+Breakpoint 1, [33mmain[m () at [32mc04.c[m:13
+13	rotation3D[31m->[mrows[31m=[m[35m4[m[31m;[m
+[?2004h[?2004l
+[?2004h(gdb) pritn[K[Knt rotarion[K[K[K[Ktion3d[KD-rows
+[?2004l
+No symbol "rows" in current context.
+[?2004h(gdb) print rotation3D-rows[1Pows[1Pws[1Ps[K>rows
+[?2004l
+$1 = 1597388920
+[?2004h(gdb) continue
+[?2004l
+Continuing.
+
+Program received signal SIGSEGV, Segmentation fault.
+[34m0x00007ffff7e2f47e[m in [33m__GI___libc_free[m ([36mmem[m=0x64) at [32m./malloc/malloc.c[m:3368
+3368	./malloc/malloc.c: No such file or directory.
+[?2004h[?2004l
+[?2004h(gdb) exit
+[?2004l
+[?2004hA debugging session is active.
+
+	Inferior 1 [process 12930] will be killed.
+
+Quit anyway? (y or n) y
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ valgring[Kd ./c04
+[?2004l
+==13056== Memcheck, a memory error detector
+==13056== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==13056== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==13056== Command: ./c04
+==13056== 
+==13056== Use of uninitialised value of size 8
+==13056==    at 0x10917A: main (c04.c:13)
+==13056== 
+==13056== Invalid write of size 4
+==13056==    at 0x10917A: main (c04.c:13)
+==13056==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==13056== 
+==13056== 
+==13056== Process terminating with default action of signal 11 (SIGSEGV)
+==13056==  Access not within mapped region at address 0x0
+==13056==    at 0x10917A: main (c04.c:13)
+==13056==  If you believe this happened as a result of a stack
+==13056==  overflow in your program's main thread (unlikely but
+==13056==  possible), you can try to increase the size of the
+==13056==  main thread stack using the --main-stacksize= flag.
+==13056==  The main thread stack size used in this run was 8388608.
+==13056== 
+==13056== HEAP SUMMARY:
+==13056==     in use at exit: 0 bytes in 0 blocks
+==13056==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==13056== 
+==13056== All heap blocks were freed -- no leaks are possible
+==13056== 
+==13056== Use --track-origins=yes to see where uninitialised values come from
+==13056== For lists of detected and suppressed errors, rerun with: -s
+==13056== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+Segmentation fault
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ exit
+[?2004l
+exit
+
+Script done on 2023-09-10 20:33:50-03:00 [COMMAND_EXIT_CODE="139"]
+
+3. alocando memoria corretamente para o tipo matrix;
+
+4.Script started on 2023-09-10 21:00:52-03:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="120" LINES="30"]
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ gcc[K[K[Kexitvalgrind ./c06[7Pgdb c06[2P./c06gcc -g -o c06 c06.cexit[Kvalgrind ./c05correto exit[Kgcc -g -o c06 c06.c./c06[Kgdb c06valgrind ./c06exit[K[Kgcc -o[Kg -po[K[Ko g04[K[K[K[K c04corretoorreto [K[K[K[K[K[K[K c04correto,c[K[K.c
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ ./c04correto
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ valgrind c04cor[1P04cor[1P4cor[1Pcor[1Por[1Pr[K./c04correto 
+[?2004l
+==15752== Memcheck, a memory error detector
+==15752== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==15752== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==15752== Command: ./c04correto
+==15752== 
+==15752== 
+==15752== HEAP SUMMARY:
+==15752==     in use at exit: 0 bytes in 0 blocks
+==15752==   total heap usage: 6 allocs, 6 frees, 112 bytes allocated
+==15752== 
+==15752== All heap blocks were freed -- no leaks are possible
+==15752== 
+==15752== For lists of detected and suppressed errors, rerun with: -s
+==15752== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ exit
+[?2004l
+exit
+
+Script done on 2023-09-10 21:02:03-03:00 [COMMAND_EXIT_CODE="0"]

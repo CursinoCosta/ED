@@ -1,0 +1,3 @@
+1. o resultado sera errado pois o for tem escopo uma unidade menor qeu o necessario;
+
+3. adicionei um ao range do for

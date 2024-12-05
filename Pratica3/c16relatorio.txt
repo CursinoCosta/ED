@@ -1,0 +1,3 @@
+1. Esse codigo literalmente nao faz nada
+
+3. Fiz as funçoes retornarem corretamente e adocionei um print;

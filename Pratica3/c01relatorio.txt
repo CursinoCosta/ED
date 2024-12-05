@@ -1,0 +1,56 @@
+1. O código faz um malloc de tamanho de 10 int, mas o for aloca 11 espaços de memoria de 0 a 10;
+
+2.Script started on 2023-09-10 19:46:23-03:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="120" LINES="30"]
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ gcc -g -o c01 c01.c
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ ./c01
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ valgrind -q ./v01
+[?2004l
+valgrind: ./v01: No such file or directory
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ valgrind -q ./v01[1P01c01
+[?2004l
+==8665== Invalid write of size 4
+==8665==    at 0x1091B8: main (c01.c:9)
+==8665==  Address 0x4a8f068 is 0 bytes after a block of size 40 alloc'd
+==8665==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==8665==    by 0x109185: main (c01.c:6)
+==8665== 
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ exit
+[?2004l
+exit
+
+Script done on 2023-09-10 19:47:09-03:00 [COMMAND_EXIT_CODE="0"]
+
+
+Script done on 2023-09-10 19:50:58-03:00 [COMMAND_EXIT_CODE="0"]
+
+3. alterei o for para operar de 0 a 9;
+
+4.Script started on 2023-09-10 19:50:16-03:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="120" LINES="30"]
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ gcc -o[Kg -o c01correto c01correto.c
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ ./c01correto
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ valgrind ./c01correto
+[?2004l
+==9018== Memcheck, a memory error detector
+==9018== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==9018== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==9018== Command: ./c01correto
+==9018== 
+==9018== 
+==9018== HEAP SUMMARY:
+==9018==     in use at exit: 0 bytes in 0 blocks
+==9018==   total heap usage: 1 allocs, 1 frees, 40 bytes allocated
+==9018== 
+==9018== All heap blocks were freed -- no leaks are possible
+==9018== 
+==9018== For lists of detected and suppressed errors, rerun with: -s
+==9018== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ exite[K
+[?2004l
+exit
+
+Script done on 2023-09-10 19:50:58-03:00 [COMMAND_EXIT_CODE="0"]
+

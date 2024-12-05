@@ -1,0 +1,67 @@
+1. há mais malocs que frees portanto ha leaks
+
+2.Script started on 2023-09-10 23:25:14-03:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="120" LINES="30"]
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ gcc =g=[K =[K[K[K[K-g -o c12[K3 c13.c
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ ./c13
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ valgrind ./c13
+[?2004l
+==28923== Memcheck, a memory error detector
+==28923== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==28923== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==28923== Command: ./c13
+==28923== 
+==28923== 
+==28923== HEAP SUMMARY:
+==28923==     in use at exit: 35 bytes in 2 blocks
+==28923==   total heap usage: 3 allocs, 1 frees, 47 bytes allocated
+==28923== 
+==28923== LEAK SUMMARY:
+==28923==    definitely lost: 35 bytes in 2 blocks
+==28923==    indirectly lost: 0 bytes in 0 blocks
+==28923==      possibly lost: 0 bytes in 0 blocks
+==28923==    still reachable: 0 bytes in 0 blocks
+==28923==         suppressed: 0 bytes in 0 blocks
+==28923== Rerun with --leak-check=full to see details of leaked memory
+==28923== 
+==28923== For lists of detected and suppressed errors, rerun with: -s
+==28923== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ exit
+[?2004l
+exit
+
+Script done on 2023-09-10 23:25:49-03:00 [COMMAND_EXIT_CODE="0"]
+
+3. Adicionei os frees necessarios
+
+4.Script started on 2023-09-10 23:25:57-03:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="120" LINES="30"]
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ exitvalgrind ./c13[9P./c13gcc -g -o c13 c13.cexit[Kgcc -g -o c13 c13.c[C[C[K[K[K[K[K[Kcorreto c123[K[K3 correto.x[Kc
+[?2004l
+[01m[Kcc1:[m[K [01;31m[Kfatal error: [m[Kcorreto.c: No such file or directory
+compilation terminated.
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ gcc -g -o c13correto c13 correto.c[1Pcorreto.c
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ ./c13correto 
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ valgrind ./ct[K12[K3correto 
+[?2004l
+==29015== Memcheck, a memory error detector
+==29015== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==29015== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==29015== Command: ./c13correto
+==29015== 
+==29015== 
+==29015== HEAP SUMMARY:
+==29015==     in use at exit: 0 bytes in 0 blocks
+==29015==   total heap usage: 3 allocs, 3 frees, 47 bytes allocated
+==29015== 
+==29015== All heap blocks were freed -- no leaks are possible
+==29015== 
+==29015== For lists of detected and suppressed errors, rerun with: -s
+==29015== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ exit
+[?2004l
+exit
+
+Script done on 2023-09-10 23:26:34-03:00 [COMMAND_EXIT_CODE="0"]

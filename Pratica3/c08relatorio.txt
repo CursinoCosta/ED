@@ -1,0 +1,63 @@
+1. falta um char de memoria na segunda variavel
+
+2.Script started on 2023-09-10 22:50:01-03:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="120" LINES="30"]
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ gcc -h[K-g[K[K g[K[Kg -o c08 c08.c
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ ./c08
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ valgrind ./c08
+[?2004l
+==25362== Memcheck, a memory error detector
+==25362== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==25362== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==25362== Command: ./c08
+==25362== 
+==25362== Invalid read of size 1
+==25362==    at 0x1091D2: main (c08.c:9)
+==25362==  Address 0x4a8f0ba is 0 bytes after a block of size 26 alloc'd
+==25362==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==25362==    by 0x1091B1: main (c08.c:6)
+==25362== 
+==25362== 
+==25362== HEAP SUMMARY:
+==25362==     in use at exit: 0 bytes in 0 blocks
+==25362==   total heap usage: 2 allocs, 2 frees, 53 bytes allocated
+==25362== 
+==25362== All heap blocks were freed -- no leaks are possible
+==25362== 
+==25362== For lists of detected and suppressed errors, rerun with: -s
+==25362== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ exiot[K[Kt
+[?2004l
+exit
+
+Script done on 2023-09-10 22:50:31-03:00 [COMMAND_EXIT_CODE="0"]
+
+3. Adicioei uma unidade de memoria a segunda variavel;
+
+4.Script started on 2023-09-10 22:50:40-03:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="120" LINES="30"]
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ gcc -g -og[K c08correto c08correto.c
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ ./c08correto 
+[?2004l
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ valgrindnd [K[K[K c08c[C[C[C[C[K[K[K[K[K ./c08correto 
+[?2004l
+==25456== Memcheck, a memory error detector
+==25456== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==25456== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==25456== Command: ./c08correto
+==25456== 
+==25456== 
+==25456== HEAP SUMMARY:
+==25456==     in use at exit: 0 bytes in 0 blocks
+==25456==   total heap usage: 2 allocs, 2 frees, 54 bytes allocated
+==25456== 
+==25456== All heap blocks were freed -- no leaks are possible
+==25456== 
+==25456== For lists of detected and suppressed errors, rerun with: -s
+==25456== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+[?2004h]0;matlinux@DESKTOP-21O4502: ~/ufmg/ED/Pratica3[01;32mmatlinux@DESKTOP-21O4502[00m:[01;34m~/ufmg/ED/Pratica3[00m$ exit
+[?2004l
+exit
+
+Script done on 2023-09-10 22:51:26-03:00 [COMMAND_EXIT_CODE="0"]
